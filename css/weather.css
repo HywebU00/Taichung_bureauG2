@@ -1,0 +1,273 @@
+@charset "UTF-8";
+.weatherForecast {
+  --tempBg:#68bebc;
+  --popBg: #53a0b3;
+  --textColor:#fff;
+  --whitBg:#fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.weatherForecast * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.weatherForecast .temperature, .weatherForecast .pop {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  padding: 6px 2px 5px;
+  margin: 0;
+  min-height: 50px;
+  font-size: 1rem;
+  line-height: 1.1;
+  color: var(--textColor);
+  text-align: center;
+}
+.weatherForecast .pop {
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  background-color: var(--popBg);
+}
+.weatherForecast .pop time {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-family: inherit;
+}
+.weatherForecast .pop .day::before {
+  content: "(";
+}
+.weatherForecast .pop .day::after {
+  content: ")";
+}
+.weatherForecast .pop .percent {
+  display: inline-block;
+  vertical-align: middle;
+}
+.weatherForecast .pop .percent em::after {
+  content: "%";
+}
+.weatherForecast .temperature {
+  background-color: var(--tempBg);
+  background-size: 100% auto;
+}
+.weatherForecast .temperature img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 3px;
+}
+.weatherForecast .temperature em {
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+}
+.weatherForecast .temperature em::after {
+  content: "°C";
+}
+@media screen and (min-width: 601px) {
+  .weatherForecast .temperature, .weatherForecast .pop {
+    padding: 12px 5px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  .weatherForecast {
+    --bigFont: 3.2rem;
+    display: block;
+  }
+  .weatherForecast::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 75px);
+    right: 0;
+    width: 60px;
+    height: 150px;
+    background: url(../images/weatherbg_baseball.png) no-repeat 0 0;
+    background-size: auto 100%;
+  }
+  .weatherForecast .temperature, .weatherForecast .pop {
+    position: relative;
+    height: 168px;
+    padding: 0 0 0 140px;
+  }
+  .weatherForecast .temperature::after, .weatherForecast .pop::after {
+    content: "";
+    position: absolute;
+    left: 140px;
+    top: calc(50% - 50px);
+    width: 1px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .weatherForecast .pop .day, .weatherForecast .pop .label {
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+  .weatherForecast .pop .date, .weatherForecast .pop .percent > em {
+    font-size: var(--bigFont);
+    line-height: 1.15;
+  }
+  .weatherForecast .pop time {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 50px);
+    width: 120px;
+    height: 100px;
+    padding: 2.5rem 0 0;
+  }
+  .weatherForecast .pop time .day {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    letter-spacing: 4px;
+  }
+  .weatherForecast .pop time .day::before {
+    content: "（";
+  }
+  .weatherForecast .pop time .day::after {
+    content: "）";
+  }
+  .weatherForecast .pop time .date {
+    display: block;
+    margin: 0;
+  }
+  .weatherForecast .pop .percent {
+    display: block;
+    width: 8rem;
+    height: 100px;
+    position: relative;
+    top: calc(50% - 50px);
+    left: 10px;
+  }
+  .weatherForecast .pop .percent .label {
+    display: block;
+    text-align: left;
+    text-indent: 0.8em;
+    letter-spacing: 1px;
+  }
+  .weatherForecast .pop .percent em {
+    display: block;
+  }
+  .weatherForecast .temperature img {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+  }
+  .weatherForecast .temperature em {
+    display: block;
+    width: 8rem;
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+    top: calc(50% - 50px);
+    left: 10px;
+    font-size: var(--bigFont);
+    text-align: center;
+  }
+}
+
+.row.col84 > .weatherForecast {
+  padding: 0;
+  height: auto !important;
+  background: var(--whitBg);
+}
+@media screen and (min-width: 1001px) {
+  .row.col84 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+  .row.col84 > * {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  .row.col84 > *:first-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 67%;
+            flex: 0 0 67%;
+    width: 67%;
+  }
+  .row.col84 > *:last-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+    width: 33%;
+  }
+}
+
+.slide .box img {
+  margin: 0 auto;
+}
+.slide li > a {
+  display: block;
+}
+.slide.bb_n3 {
+  width: 100%;
+  max-width: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.slide.bb_n3 .box {
+  height: 60vw;
+}
+.slide.bb_n3 .box img {
+  height: 60vw;
+  width: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slide.bb_n3 .dots {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  height: auto;
+  padding: 0 5px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.slide.bb_n3 .box:hover ~ .dots {
+  opacity: 0.1;
+}
+@media screen and (min-width: 1001px) {
+  .slide.bb_n3 {
+    --imgHeight: 336px;
+  }
+  .slide.bb_n3 .box {
+    height: var(--imgHeight);
+  }
+  .slide.bb_n3 .box img {
+    height: var(--imgHeight);
+  }
+}
