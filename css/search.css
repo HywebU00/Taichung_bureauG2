@@ -1,57 +1,71 @@
-	/* 版頭的查詢區 search */
-	.header .search{position:absolute;right:0;top:33px;width:31%;
-		label{font-size:0;}
-		form{display:inline-block;vertical-align:top;
-			input{vertical-align:top;margin:0;padding:0 .5em;border:none;border-radius: 0;height:2.4em;line-height:2.4em;float:left;
-				&[type="submit"]{padding:0;}
-				&[type="text"]{width:10em;border:1px solid #bbb;box-sizing:border-box;}
+  /* 版頭的查詢區 search  2024/10 修改 */
+.header .search {
+  --bgc: rgb(0 0 0 / .7);
+  --btnBg:#444;
+  --btnBg2:#777;
+  --tinge: #fff;
 
-				a{display:inline-block;height:2.4em;line-height:2.4em;margin:0;padding:0 2px;text-decoration:none;}
-			}
-		}
+  position: fixed;top: auto;left: 0;right: 0;
+  padding: 12px;
+  background: var(--bgc);
 
-		.keywordHot{display:block;margin-top: -5px;
-			ul{display:inline-block;line-height:2em;height:2em;font-size:.87em;}
-			li{
-        margin:0 .6em 0 0;padding:0;display:inline-block;
-				a:hover,
-				a:focus{text-decoration:underline;color: #000;}
-			}
-		}
+  .keywordHot{display: none;}
 
-    @media screen and (max-width:1000px) {
-      display: none;
-      position: fixed;top: auto; left: 0;right: 0;
-      padding: .5em .8em; width: auto;
-      background: rgb(0 0 0 / .7);
-      text-align: center;
-
-      a{color:#fff; text-decoration:none;}
-      input[type="text"] {
-        width: 16em;padding: 0 .8em;margin: 0;
-        background: #fff; box-shadow: none;
-        &:hover, &:focus {
-          border: #c00 0 0 0 2px inset;
-        }
-      }
-      input[type="submit"], input[type="button"] {
-        position: relative;
-        margin-left: -5px;width: 3em;text-indent: -200px;
-        background: #666 url(../images/search_submit.png) no-repeat center center;
-        /* background-size: 20px; */
-      }
-
-      .keywordHot{ display:inline-block;
-        ul{font-size: 1em;line-height:2.4em;height:2.4em;vertical-align:top;}
-        li a{color:#fff;line-height:2.4em;height:2.4em;}
-      }
+  form{
+    display: flex; align-items: center;
+    margin: 0 auto; padding: 0; max-width: 520px;
+    
+    input{height: 2.8em; line-height: 2.8;}
+    
+    input[type="text"]{
+      flex: 1 1 auto; 
+      margin: 0; border-radius: 0; border: none;
+      background-color: #fff;
+      &:hover, &:focus { box-shadow: var(--btnBg2) 0 0 0 1px inset;}
+      &:focus {box-shadow: var(--btnBg2) 0 0 0 2px inset;}
+    }
+    input[type="submit"], input[type="button"] {
+      flex: 0 0 2.8em; width: 2.8em;
+      text-indent: -20em; overflow: hidden;
+      margin: 0 8px 0 0;
+      background: var(--btnBg) url(../images/search_submit.png) no-repeat center center;
+      background-size: 60%;
+      &:hover ,
+      &:focus { background-color: var(--btnBg2); outline: none;}
     }
 
-    @media screen and (max-width:600px){
-      form{display:block;margin:0 auto;}
-      input[type="text"]{width:calc(100% - 7em);}
-      .keywordHot{ display:none;}
+    a.btnAdv {
+      display: inline-block; height: 2em; line-height: 2;
+      white-space: nowrap; padding: 0 4px;
+      text-decoration: none; color: var(--tinge); 
+      &:hover, &:focus{
+        text-decoration: underline;
+      }
+      &:focus{outline: 1px solid var(--tinge);}
     }
+  }
 
-	}
+  @media screen and (min-width: 1000px){
 
+    position: absolute; left: auto; right: 20px;top: 2.6em;
+    padding: 0; width: min-content; max-width: 30%;
+
+    .keywordHot { 
+      display: block;
+      ul{ 
+        list-style: none; margin: 0;padding: 0; overflow: hidden;
+        line-height: 1.2;
+      }
+      li{
+        margin: 0 .5em 0 0; padding: 0; float: left;
+        a{display: block; color: #000;}
+      }
+    }
+    form { 
+      max-width: none;
+      input{height: 2.4em; line-height: 2.4;}
+      input[type="text"]{ flex: 0 0 10em;}
+      input[type="submit"], input[type="button"]{ flex-basis: 2.4em; width: 2.4em;}
+    }
+  }
+}

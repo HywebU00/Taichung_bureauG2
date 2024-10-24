@@ -293,15 +293,16 @@ function fixHeader(){//固定版頭
 	// ---------- 2024/9/23 無障礙修改 ---------- //
 	// 行動版查詢
 	var _searchCtrl = $('.searchCtrl');
-	var _searchLastA = _search.find('a.btnAdv');
+	var _searchLastA = _search.find('a, input, button').last();
 	_searchCtrl.on('click', function(){
 		if( _search.is(':hidden')) {
 			_search.css('top', _header.outerHeight(true) ).slideDown(250, function(){
 				_search.find('input[type="text"]').trigger('focus');
 			});
+			_searchCtrl.addClass('close');
 		} else {
 			_search.slideUp(250, function(){
-				_searchCtrl.trigger('focus');
+				_searchCtrl.removeClass('close');
 				_search.removeAttr('style');
 			});
 		}
@@ -310,7 +311,7 @@ function fixHeader(){//固定版頭
 	// 行動版 search 開啟時 tab 回查詢開關
 	if( ww < wwNormal) {
 		_searchLastA.on('keydown', function(e){
-			if ( !e.shiftKey && e.key=='Tab' ) {
+			if ( !e.shiftKey && e.key==='Tab' ) {
 				e.preventDefault();
 				_searchCtrl.trigger('focus');
 			}
@@ -324,12 +325,6 @@ function fixHeader(){//固定版頭
 	}
 
 
-	// function mobileSearch(){//行動版查詢
-	// 	// if(ww<wwNormal){_search.css('top', hh);}
-	// 	// searchTop();
-	// 	// _search.slideToggle();
-	// 	// _searchCtrl.toggleClass('close');
-	// }
 
 	function searchTop() {
 		if( _window.width()<wwNormal ){

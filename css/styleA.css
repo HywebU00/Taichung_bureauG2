@@ -14,21 +14,73 @@ a.goCenter{background:#ffac0e;}
 /*.bb1 .arbtn:hover{background:rgba;}*/
 
 
-/* input[type="text"]:focus,
+/* 
+input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 input[type="file"]:focus,
 select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;} */
 
-.header{background-color:#ffac0e;color:#000;border-bottom:1px solid #fff;box-shadow:rgba(0,0,0,.5) 0 3px 8px -3px;}
+
+/* -------------------------------------------------------------------------------- */
+/* 202410 */
+.header{
+	--bgc: #ffac0e;
+	--bgcFixed: rgba(255,172,14,.95);
+	--focusOutlineColor: #fe9;
+}
+.header .navigation{
+	--bgc: #444;
+	--fontColor: #fefad8;
+	--tinge: #fdd600;
+}
+/*  */
+button.sidebarCtrl, button.searchCtrl{
+	--tinge: #333;
+	--bgc: transparent;
+
+	&:hover, &:focus {
+		--tinge: #fff;
+		--bgc: #fb6400;
+	}
+}
+button.searchCtrl.close {
+	--tinge: #fff;
+	--bgc: #fb6400;
+}
+
+
+/* 版頭查詢區 */
+/* 202410 */
+.header .search {
+  --bgc: rgb(0 0 0 / .7);
+  --btnBg:#0a7d6c;
+  --btnBg2:#fb6400;
+  --tinge: #fff;
+
+	@media screen and (min-width: 1000px){
+		--bgc: transparent;
+		--tinge: #000;
+	}
+}
+
+/* -------------------------------------------------------------------------------- */
+
+/* .header{
+	background-color:#ffac0e;color:#000;border-bottom:1px solid #fff;box-shadow:rgba(0,0,0,.5) 0 3px 8px -3px;
+}
 .header.fixed .menu,
 .header.fixed .megaMenu{background:rgba(255,172,14,.95);border-bottom:1px solid rgba(255,255,255,.8);}
 .header.fixed .menu>ul,
-.header.fixed .megaMenu>ul{padding:0;}
-.header .sidebarCtrl,
+.header.fixed .megaMenu>ul{padding:0;} */
+
+/* .header .sidebarCtrl,
 .searchCtrl{background-color:transparent;}
 .header .sidebarCtrl:hover, .header .sidebarCtrl:focus,
-.searchCtrl:hover, .searchCtrl:focus{background-color:#fb6400;}
+.searchCtrl:hover, .searchCtrl:focus{background-color:#fb6400;} */
+
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
 
 .sidebar {background:#3f4534;}
 .sidebar .sidebarClose{
@@ -53,39 +105,42 @@ select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;} */
 	&:hover, &:focus{ background-color: #fdd600;}
 }
 
-.header .navigation{background:#2f2f2f;left:0;}
-.header .navigation li a{color:#fffce6;}
-.header .navigation li a:hover,
-.header .navigation li a:focus{color:#bdf21c;}
-.header .navigation li a:focus{background:#000;}
 
-/* .header .search{top:28px;} */
-.header .search {
-	input[type="submit"], input[type="button"] {
-		width:2.5em;
-		background:#199986 url(../images/search_submit.png) no-repeat center center;
-		background-size:1.8em;
-		color:transparent;
-		&:hover, &:focus {background-color:#fb6400;outline:none;}
-	}
-	input[type="text"]{width:12em;background: #fff;background:rgba(255,255,255,.8);border:none;}
-	input[type="text"]:hover,
-	input[type="text"]:focus{box-shadow:#199986 0 0 0 2px inset;}
-	input[type="text"]:focus{background:#fff;}
-	a{
-		&:hover, &:focus{background:#fb6400;}
-	}
+/* 
+.header .navigation{background:#3f4534;left:0;}
+.header .navigation li a{color:#fff;position:relative;}
+.header .navigation li a::after{content:'';position:absolute;height:0;left:0;right:0;bottom:0;transition:.2s;}
+.header .navigation li a:hover,
+.header .navigation li a:focus{color:#ffe749;outline:none;}
+.header .navigation li a:hover::after,
+.header .navigation li a:focus::after{background:#e17c1a;height:3px;}
+.sidebar .navigation li a{background:#93c622;color:#000;box-shadow:#3f4534 0 0 0 1px;
+	&:hover, &:focus{background:#beed19;}
 }
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width:1000px){
-	.header{background:rgba(255,172,14,.95);}
-	.header h1 a:focus{box-shadow: #fb6400 0 0 0 2px inset; outline: none;}
-	.header .search input[type="text"]{background:#fff;}
+	/* .header{background:rgba(255,172,14,.95);}
+	.header h1 a:focus{box-shadow: #fb6400 0 0 0 2px inset; outline: none;} */
 	.keywordHot li a:hover {color:#fe0}
 }
 @media screen and (max-width:600px){
-	.header .search input[type="text"]{background:#fff;width:calc(100% - 8em);}
 }
+
+
+
 
 .header .menu a,
 .header .megaMenu a{color:#000;}
