@@ -39,7 +39,7 @@ $(document).ready(function(){
 	
 	// 按 Enter 到主內容區
 	$('a.goCenter').keydown(function(e){
-		e.preventDefault();
+		// e.preventDefault();
 		if(e.which == 13) { 
 			_window.scrollTop( hh - _menu.innerHeight() + 5 );
 			$('.accesskey#aC').focus();
@@ -182,7 +182,7 @@ function webSiteMenu(){//主選單
 	_megaMenu.parent().clone().prependTo( _sidebar);
 	_sidebar.find('.megaMenu').addClass('menu');
 
-	//行動版 menu
+	// 行動版 menu
 	// ---------- 2024/9/23 無障礙修改 ---------- //
 	var _mobileMenu = _sidebar.find('.menu');
 	var _mobileMenuA = _mobileMenu.find('li.hasChild>a');
@@ -198,17 +198,16 @@ function webSiteMenu(){//主選單
 		_sidebar.show(10, function(){
 			$(this).addClass('show');
 		})
-		_overlay.show(0, function(){
-			$(this).fadeTo('400', 0.5);
-		});
+		_overlay.fadeIn(400);
 		_mobileMenuFirstA.trigger('focus');
+		_body.addClass('noScroll');
 	}
 
 	function hideSidebar(){
 		_sidebar.removeClass('show');
-		_overlay.fadeTo('400', 0, function () {
-			_overlay.hide();
+		_overlay.fadeOut( 400, function () {
 			_sidebar.removeAttr('style');
+			_body.removeClass('noScroll');
 		});
 		_sidebarCtrl.trigger('focus');
 	}
@@ -219,7 +218,7 @@ function webSiteMenu(){//主選單
 
 
 	_sidebarCtrl.on('click', function () {
-		if (_overlay.is(':visible')) {
+		if (_sidebar.is(':visible')) {
 			hideSidebar();
 		} else {
 			showSidebar();
@@ -231,7 +230,7 @@ function webSiteMenu(){//主選單
 	});
 
 	_sidebarClose.on('keydown', function(e){
-		if( !e.shiftKey && e.key==='Tab' ) {
+		if( !e.shiftKey && e.key === 'Tab' ) {
 			e.preventDefault();
 			_mobileMenuFirstA.trigger('focus');
 		}

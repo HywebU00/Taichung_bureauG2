@@ -3,6 +3,7 @@
 @import url("header.css");
 @import url("search.css");
 @import url("menu.css");
+@import url("sidebar.css"); /* 行動版側欄 */
 @import url("link.css");
 @import url("news.css");
 @import url("card.css");

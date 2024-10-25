@@ -1,38 +1,37 @@
 /* StyleA */
+:root{
+	--primaryColor: #ffac0e;
+	--secondaryColor:#3f4534;
+	--assistance1: #fd0;
+
+	--fontColor: #393939;
+	--fontColorDark: #000; 
+
+}
+
+
+
+
+
 body{color:#444}
 a{text-decoration:none;color:#554}
 a:hover, a:focus{outline:none;color:#000;}
-.more a{display:inline-block;vertical-align:middle;background:rgba(255,255,255,.7);color:#000;height:2em;line-height:2em;padding:0 .6em;min-width:3em;border-radius:2em;box-shadow:rgba(0,80,80,.7) 0 0 2px;transition:.2s;}
-.more a:after{display:none;}
-.more a:hover{background:#fff;box-shadow:rgba(0,0,0,.6) 0 2px 6px;outline:none;text-decoration:none;}
-.more a:focus{background:#eb6400;outline:none;text-decoration:none;color: #fff;box-shadow: none;}
-.more a:before{content:'＋';font-weight:bold;display:inline-block;margin-right:1px;color:#70ac14;font-size:1.2em;}
-.more a:focus:before{color: #fff}
-a.goCenter{background:#ffac0e;}
-
-.arbtn:not('.bb1'):hover{background:#ffac0e;}
 /*.bb1 .arbtn:hover{background:rgba;}*/
 
 
-/* 
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-input[type="file"]:focus,
-select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;} */
 
-
-/* -------------------------------------------------------------------------------- */
 /* 202410 */
+/* -------------------------------------------------------------------------------- */
 .header{
-	--bgc: #ffac0e;
+	--bgc: var(--primaryColor);
 	--bgcFixed: rgba(255,172,14,.95);
 	--focusOutlineColor: #fe9;
-}
-.header .navigation{
-	--bgc: #444;
-	--fontColor: #fefad8;
-	--tinge: #fdd600;
+
+	.navigation{
+		--bgc: #444;
+		--fontColor: #fefad8;
+		--tinge: #fdd600;
+	}
 }
 /*  */
 button.sidebarCtrl, button.searchCtrl{
@@ -51,18 +50,50 @@ button.searchCtrl.close {
 
 
 /* 版頭查詢區 */
-/* 202410 */
 .header .search {
   --bgc: rgb(0 0 0 / .7);
   --btnBg:#0a7d6c;
   --btnBg2:#fb6400;
   --tinge: #fff;
+  --kwFontColor: #000;
+  --kwBgc: #fe9;
 
 	@media screen and (min-width: 1000px){
 		--bgc: transparent;
 		--tinge: #000;
 	}
 }
+
+/* 側欄 */
+.sidebar{
+  --bgc: #3f4534;
+  --closeBtn_bgc: #a2cb0d;
+  --closeBtn_hover_bgc: #b5e119;
+
+  --menu_bgc: #199986;
+  --menu_hover_bgc: #0a7d6c;
+  --menuA_color: #fff;
+  --menu_bdrColor : rgb(255 255 255 / .6);
+  --menu_bdrColor2 : rgb(255 255 255 / .4);
+
+  --navA_color: #000;
+  --navA_bgc: #ecb322;
+  --navA_hover_bgc: #fdd600;
+  --nav_bdrColor: #3f4534;
+
+  --sidebarClose_bgc: #a2cb0d;
+  --sidebarClose_hover_bgc: #cae80a;
+  --sidebarClose_color: #000;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
 
 /* -------------------------------------------------------------------------------- */
 
@@ -74,36 +105,8 @@ button.searchCtrl.close {
 .header.fixed .menu>ul,
 .header.fixed .megaMenu>ul{padding:0;} */
 
-/* .header .sidebarCtrl,
-.searchCtrl{background-color:transparent;}
-.header .sidebarCtrl:hover, .header .sidebarCtrl:focus,
-.searchCtrl:hover, .searchCtrl:focus{background-color:#fb6400;} */
 
 /* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-
-.sidebar {background:#3f4534;}
-.sidebar .sidebarClose{
-	background:#a2cb0d;
-	&:hover,
-	&:focus{
-		background:#b5e119;
-		box-shadow: #d6fd49 0 0 0 3px inset;
-	}
-}
-.sidebar .menu{background:#199986; }
-.sidebar .menu li>a{border-color:rgba(255,255,255,.65)}
-.sidebar .menu li a{color:#fff;
-	&:hover, &:focus{background:#0a7d6c; }
-}
-.sidebar .menu li li>a{border-bottom-style:dotted;}
-.sidebar .menu li.hasChild>a:before{border-color:#fff}
-.sidebar .menu ul ul{border:1px solid rgba(255,255,255,.7);border-top:none;}
-.sidebar .navigation li a{ 
-	background:#ecb322;
-	box-shadow:#3f4534 0 0 0 1px;
-	&:hover, &:focus{ background-color: #fdd600;}
-}
 
 
 /* 
@@ -130,16 +133,29 @@ button.searchCtrl.close {
 
 
 
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
 
-@media screen and (max-width:1000px){
-	/* .header{background:rgba(255,172,14,.95);}
-	.header h1 a:focus{box-shadow: #fb6400 0 0 0 2px inset; outline: none;} */
-	.keywordHot li a:hover {color:#fe0}
-}
-@media screen and (max-width:600px){
-}
+/* 
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+input[type="file"]:focus,
+select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;} 
+*/
 
 
+.more a{display:inline-block;vertical-align:middle;background:rgba(255,255,255,.7);color:#000;height:2em;line-height:2em;padding:0 .6em;min-width:3em;border-radius:2em;box-shadow:rgba(0,80,80,.7) 0 0 2px;transition:.2s;}
+.more a:after{display:none;}
+.more a:hover{background:#fff;box-shadow:rgba(0,0,0,.6) 0 2px 6px;outline:none;text-decoration:none;}
+.more a:focus{background:#eb6400;outline:none;text-decoration:none;color: #fff;box-shadow: none;}
+.more a:before{content:'＋';font-weight:bold;display:inline-block;margin-right:1px;color:#70ac14;font-size:1.2em;}
+.more a:focus:before{color: #fff}
+
+.arbtn:not('.bb1'):hover{background:#ffac0e;}
 
 
 .header .menu a,

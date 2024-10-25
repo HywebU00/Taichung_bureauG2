@@ -94,6 +94,7 @@
 	position: relative; z-index: 5000;
 	padding:0 44px;height:44px;
 	border-bottom:1px solid #fff;
+	background-color: var(--bgc);
 	h1{
 		height: 100%; margin: 0 auto; padding:4px 0;
 		a{
@@ -112,8 +113,9 @@
 		box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
 		background-color: var(--bgcFixed);
 
-		/* .menu,
-		.megaMenu{background:rgba(255,172,14,.95);border-bottom:1px solid rgba(255,255,255,.8);} */
+		/* 
+		.megaMenu{background:rgba(255,172,14,.95);border-bottom:1px solid rgba(255,255,255,.8);} 
+		*/
 	}
 
 	.navigation{display: none;}
@@ -141,7 +143,6 @@
 		background-repeat: no-repeat;
 		background-position: left bottom;
 		background-size: cover;
-		background-color: var(--bgc);
 		
 
 		h1{
