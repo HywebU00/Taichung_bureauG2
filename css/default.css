@@ -2,8 +2,7 @@
 
 html{-webkit-text-size-adjust:none;-ms-text-size-adjust:100%;min-height:100%;}
 body {
-	margin: 0 auto;
-	padding: 0;
+	margin: 0 auto; padding: 0;
 	font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
 	min-height: inherit;
 	font-size: 15px;
@@ -82,14 +81,18 @@ ul, ol{list-style:none;margin:0;padding:0;}
 li{line-height:1.6;margin:0;padding:0;}
 
 
-.more{
-	margin:10px auto 5px;text-align:center;
-	a{display:inline-block;line-height:2.2em;height:2.1em;text-decoration: none;
-		outline: none;
-		transition:.2s;
+.more {
+	margin: 10px auto 5px; text-align: center;
+	a {
+		display: inline-block; position: relative;
+		line-height: 2em; height: 2em;padding: 0 .7em;
+		text-decoration: none; outline: none;
+		transition: .2s;
+		&:hover, &:focus {text-decoration: none; outline: none;}
 	}
 }
-.from{display:inline-block;margin-left:1em;font-size:.88em}
+
+.from{display:inline-block;margin-left:1em;font-size:.88em;}
 time{display:inline-block;margin-left:1em;font-family:Courier New;letter-spacing: -1px;font-weight: bold;}
 
 

@@ -3,17 +3,17 @@
 	--primaryColor: #ffac0e;
 	--secondaryColor:#3f4534;
 	--assistance1: #fd0;
+	--assistance2: #0f9488;
+	--assistance3: #64aa00;
+	--assistance4: #fb6400;
 
 	--fontColor: #393939;
 	--fontColorDark: #000; 
-
 }
 
 
 
 
-
-body{color:#444}
 a{text-decoration:none;color:#554}
 a:hover, a:focus{outline:none;color:#000;}
 /*.bb1 .arbtn:hover{background:rgba;}*/
@@ -40,12 +40,12 @@ button.sidebarCtrl, button.searchCtrl{
 
 	&:hover, &:focus {
 		--tinge: #fff;
-		--bgc: #fb6400;
+		--bgc: var(--assistance4);
 	}
 }
 button.searchCtrl.close {
 	--tinge: #fff;
-	--bgc: #fb6400;
+	--bgc: var(--assistance4);
 }
 
 
@@ -88,45 +88,57 @@ button.searchCtrl.close {
 
 /* -------------------------------------------------------------------------------- */
 
-
-
-
-
-
-
-
+/* more */
 /* -------------------------------------------------------------------------------- */
-
-/* .header{
-	background-color:#ffac0e;color:#000;border-bottom:1px solid #fff;box-shadow:rgba(0,0,0,.5) 0 3px 8px -3px;
+.more {
+	a {
+		border-radius: 2em;
+		color: var(--fontColorDark);
+		background: rgba(255, 255, 255, .7);
+		box-shadow: rgba(0, 80, 80, .7) 0 0 3px;
+		&::before {
+			content: '＋';
+			display: inline-block; vertical-align: middle; margin-right: 1px;
+			font-weight: bold;font-size: 1.2em;
+			color: var(--assistance2);
+		}
+		&:hover {
+			background: #fff;
+			box-shadow: rgba(0, 80, 80, .8) 0 2px 6px;
+		}
+		&:focus {
+			background: var(--assistance4); color: #fff;
+			box-shadow: none;
+			&::before { color: #fff;}
+		}
+	}
 }
-.header.fixed .menu,
-.header.fixed .megaMenu{background:rgba(255,172,14,.95);border-bottom:1px solid rgba(255,255,255,.8);}
-.header.fixed .menu>ul,
-.header.fixed .megaMenu>ul{padding:0;} */
-
-
 /* -------------------------------------------------------------------------------- */
 
 
-/* 
-.header .navigation{background:#3f4534;left:0;}
-.header .navigation li a{color:#fff;position:relative;}
-.header .navigation li a::after{content:'';position:absolute;height:0;left:0;right:0;bottom:0;transition:.2s;}
-.header .navigation li a:hover,
-.header .navigation li a:focus{color:#ffe749;outline:none;}
-.header .navigation li a:hover::after,
-.header .navigation li a:focus::after{background:#e17c1a;height:3px;}
-.sidebar .navigation li a{background:#93c622;color:#000;box-shadow:#3f4534 0 0 0 1px;
-	&:hover, &:focus{background:#beed19;}
+
+/* newsType1, .newsType2 AND  .newsType3, .newsType4, .newsType5 */
+/* -------------------------------------------------------------------------------- */
+.newsType1, .newsType2, .newsType3, .newsType4, .newsType5{
+	--h2_bgc: #fc6400;
+	--a_before_bgc: #fb0;
 }
- */
-
-
-
-
-
-
+.cx3 {
+	&>.newsType1 , &>.newsType2{
+		&:nth-child(3n+1) {--h2_bgc: #0f9488;--a_before_bgc: #0f9488;}
+		&:nth-child(3n+2) {--h2_bgc: #64aa00;--a_before_bgc: #64aa00;}
+		&:nth-child(3n+3) {--h2_bgc: #fc6400;--a_before_bgc: #fc6400;}
+	}
+}
+.cx4 {
+	&>.newsType1 , &>.newsType2 {
+		&:nth-child(4n+1) {--h2_bgc: #0f9488; --a_before_bgc: #0f9488;}
+		&:nth-child(4n+2) {--h2_bgc: #64aa00; --a_before_bgc: #64aa00;}
+		&:nth-child(4n+3) {--h2_bgc: #fc6400; --a_before_bgc: #fc6400;}
+		&:nth-child(4n+4) {--h2_bgc: #f99900; --a_before_bgc: #f99900;}
+	}
+}
+/* -------------------------------------------------------------------------------- */
 
 
 
@@ -139,21 +151,6 @@ button.searchCtrl.close {
 /* -------------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------------- */
 
-/* 
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-input[type="file"]:focus,
-select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;} 
-*/
-
-
-.more a{display:inline-block;vertical-align:middle;background:rgba(255,255,255,.7);color:#000;height:2em;line-height:2em;padding:0 .6em;min-width:3em;border-radius:2em;box-shadow:rgba(0,80,80,.7) 0 0 2px;transition:.2s;}
-.more a:after{display:none;}
-.more a:hover{background:#fff;box-shadow:rgba(0,0,0,.6) 0 2px 6px;outline:none;text-decoration:none;}
-.more a:focus{background:#eb6400;outline:none;text-decoration:none;color: #fff;box-shadow: none;}
-.more a:before{content:'＋';font-weight:bold;display:inline-block;margin-right:1px;color:#70ac14;font-size:1.2em;}
-.more a:focus:before{color: #fff}
 
 .arbtn:not('.bb1'):hover{background:#ffac0e;}
 
@@ -322,15 +319,34 @@ select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;}
 
 
 
-
-
-
+/* .newsType1, .newsType2 {
+	li>a {
+		position:relative;transition:.2s;
+		&::before {
+			content:'';position:absolute;left:0;top:5px;bottom:5px;width:0;
+			background:var(--a_before_bgc);
+			transition:.2s;
+		}
+		&:hover, &:focus { 
+			padding-left:10px;padding-right:0;
+			text-decoration:none;
+			color:#000;
+			&::before{width:6px;}
+		}
+	}
+} */
+/* 
 .newsType1>h2,
 .newsType2>h2,
 .newsType3>h2,
 .newsType4>h2,
-.newsType5>h2{border-bottom:3px solid #fc6400;}
-
+.newsType5>h2{border-bottom:3px solid #fc6400;} 
+*/
+/* 
+.newsType2 li>a:hover,
+.newsType2 li>a:focus{text-decoration:underline;color:#000;text-decoration:none;} 
+*/
+/* 
 .newsType1 li a,
 .newsType2 li a{position:relative;transition:.2s;}
 .newsType1 li a:hover,
@@ -342,8 +358,9 @@ select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;}
 .newsType1 li a:hover:before,
 .newsType2 li a:hover:before,
 .newsType1 li a:focus:before,
-.newsType2 li a:focus:before{width:6px;}
-
+.newsType2 li a:focus:before{width:6px;} 
+*/
+/* 
 .cx3>.newsType1,
 .cx3>.newsType2,
 .cx4>.newsType1,
@@ -361,10 +378,15 @@ select:focus{border-color:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;outline:none;}
 .cx4>.newsType1:nth-child(4n+3) h2,
 .cx4>.newsType2:nth-child(4n+3) h2{background:#fc6400;}
 .cx4>.newsType1:nth-child(4n+4) h2,
-.cx4>.newsType2:nth-child(4n+4) h2{background:#f99900;}
+.cx4>.newsType2:nth-child(4n+4) h2{background:#f99900;} 
+*/
 
-.newsType2 li>a:hover,
-.newsType2 li>a:focus{text-decoration:underline;color:#000;text-decoration:none;}
+
+
+
+
+
+
 
 .newsType6 li a:hover:before,
 .newsType6 li a:focus:before{background-color: #fc6400;}
