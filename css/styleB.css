@@ -76,6 +76,19 @@ button.sidebarCtrl, button.searchCtrl{
   --sidebarClose_color: #000;
 }
 
+/* 寬版主選單 */
+.header .menu, .header .megaMenu {
+	--menu_bgc: #fff;
+  --menu_top_a_hover_bgc:#3f4534;
+  --menu_a_color:#222;
+  --menu_a_hover_bgc:#70ac14;
+  --menu_a_hover_color:#fff;
+	--menu_a_after_tinge:#70ac14;
+  --menu_bdr_color:#ccc;
+  --menu_shadow_color : rgb(0 0 0 / .5);
+}
+
+
 
 /* more */
 /* -------------------------------------------------------------------------------- */

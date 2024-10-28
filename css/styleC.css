@@ -64,7 +64,9 @@
 	}
 }
 
+
 /* 側欄 */
+/* -------------------------------------------------------------------------------- */
 .sidebar{
   --bgc: #3f4534;
   --closeBtn_bgc: #a2cb0d;
@@ -85,7 +87,20 @@
   --sidebarClose_hover_bgc: #c70e69;
   --sidebarClose_color: #fff;
 }
+
+
+/* 寬版主選單 */
 /* -------------------------------------------------------------------------------- */
+.header .menu, .header .megaMenu {
+	--menu_bgc: #fff;
+  --menu_top_a_hover_bgc:#3f4534;
+  --menu_a_color:#000;
+  --menu_a_hover_bgc:#e17c1a;
+  --menu_a_hover_color:#fff;
+	--menu_a_after_tinge:#e17c1a;
+  --menu_bdr_color:#ccc;
+  --menu_shadow_color : rgb(0 0 0 / .5);
+}
 
 
 /* more */

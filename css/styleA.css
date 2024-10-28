@@ -50,6 +50,7 @@ button.searchCtrl.close {
 
 
 /* 版頭查詢區 */
+/* -------------------------------------------------------------------------------- */
 .header .search {
   --bgc: rgb(0 0 0 / .7);
   --btnBg:#0a7d6c;
@@ -65,6 +66,7 @@ button.searchCtrl.close {
 }
 
 /* 側欄 */
+/* -------------------------------------------------------------------------------- */
 .sidebar{
   --bgc: #3f4534;
   --closeBtn_bgc: #a2cb0d;
@@ -86,7 +88,22 @@ button.searchCtrl.close {
   --sidebarClose_color: #000;
 }
 
+
+/* 寬版主選單 */
 /* -------------------------------------------------------------------------------- */
+.header .menu, .header .megaMenu {
+	--menu_bgc: #fff;
+  --menu_top_a_hover_bgc:#3f4534;
+  --menu_a_color:#222;
+  --menu_a_hover_bgc:#fc6400;
+  --menu_a_hover_color:#fff;
+	--menu_a_after_tinge:#fc6400;
+  --menu_bdr_color:#ccc;
+  --menu_shadow_color : rgb(0 0 0 / .5);
+}
+
+
+
 
 /* more */
 /* -------------------------------------------------------------------------------- */
@@ -113,7 +130,6 @@ button.searchCtrl.close {
 		}
 	}
 }
-/* -------------------------------------------------------------------------------- */
 
 
 
@@ -155,6 +171,8 @@ button.searchCtrl.close {
 .arbtn:not('.bb1'):hover{background:#ffac0e;}
 
 
+
+/* 
 .header .menu a,
 .header .megaMenu a{color:#000;}
 .header .menu li li:hover>a,
@@ -175,7 +193,7 @@ button.searchCtrl.close {
 .header .megaMenu li li.hasChild>a:hover:after,
 .header .megaMenu li li.hasChild>a:focus:after{border-color:#fff;}
 .header .megaMenu li li li a:hover:before,
-.header .megaMenu li li li a:focus:before{background:#fff;}
+.header .megaMenu li li li a:focus:before{background:#fff;} */
 
 /* 
 .flowerCountdown{background:rgba(47,47,47,.8);}
