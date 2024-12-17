@@ -7,74 +7,74 @@
   --kwFontColor: #000;
   --kwBgc: #fff;
 
-
   position: fixed;top: auto;left: 0;right: 0;
   padding: 12px;
   background: var(--bgc);
+}
+.header .search .keywordHot{ display: none;}
+.header .search form{
+  display: flex; align-items: center;
+  margin: 0 auto; padding: 0; max-width: 520px;
+}
+.header .search form input{height: 2.8em; line-height: 2.8;}
+.header .search form input[type="text"]{
+  flex: 1 1 auto; 
+  margin: 0; border-radius: 0; border: none;
+  background-color: #fff;
+}
+.header .search form input[type="text"]:hover,
+.header .search form input[type="text"]:focus { box-shadow: var(--btnBg2) 0 0 0 1px inset;}
+.header .search form input[type="text"]:focus {box-shadow: var(--btnBg2) 0 0 0 2px inset;}
 
-  .keywordHot{display: none;}
+.header .search form input[type="submit"],
+.header .search form input[type="button"] {
+  flex: 0 0 2.8em; width: 2.8em;
+  margin: 0 8px 0 0;
+  text-indent: -20em; overflow: hidden;
+  background: var(--btnBg) url(../images/search_submit.png) no-repeat center center;
+  background-size: 60%;
+}
+.header .search form input[type="submit"]:hover,
+.header .search form input[type="submit"]:focus,
+.header .search form input[type="button"]:hover,
+.header .search form input[type="button"]:focus { background-color: var(--btnBg2); outline: none;}
 
-  form{
-    display: flex; align-items: center;
-    margin: 0 auto; padding: 0; max-width: 520px;
-    
-    input{height: 2.8em; line-height: 2.8;}
-    
-    input[type="text"]{
-      flex: 1 1 auto; 
-      margin: 0; border-radius: 0; border: none;
-      background-color: #fff;
-      &:hover, &:focus { box-shadow: var(--btnBg2) 0 0 0 1px inset;}
-      &:focus {box-shadow: var(--btnBg2) 0 0 0 2px inset;}
-    }
-    input[type="submit"], input[type="button"] {
-      flex: 0 0 2.8em; width: 2.8em;
-      text-indent: -20em; overflow: hidden;
-      margin: 0 8px 0 0;
-      background: var(--btnBg) url(../images/search_submit.png) no-repeat center center;
-      background-size: 60%;
-      &:hover ,
-      &:focus { background-color: var(--btnBg2); outline: none;}
-    }
+a.btnAdv {
+  display: inline-block; height: 2em; line-height: 2;
+  white-space: nowrap; padding: 0 4px;
+  text-decoration: none; color: var(--tinge); 
+}
+a.btnAdv:hover,
+a.btnAdv:focus{text-decoration: underline;}
+a.btnAdv:focus{outline: 1px solid var(--tinge);}
 
-    a.btnAdv {
-      display: inline-block; height: 2em; line-height: 2;
-      white-space: nowrap; padding: 0 4px;
-      text-decoration: none; color: var(--tinge); 
-      &:hover, &:focus{
-        text-decoration: underline;
-      }
-      &:focus{outline: 1px solid var(--tinge);}
-    }
-  }
-
-  @media screen and (min-width: 1000px){
-
+@media screen and (min-width: 1000px){
+  .header .search {
     position: absolute; left: auto; right: 20px;top: 2.7em;
     padding: 0; width: min-content; max-width: 30%;
-
-    /* 熱門查詢詞 */
-    .keywordHot {   
-      display: block;
-      ul{ 
-        list-style: none; margin: 0;padding: 0; overflow: hidden;
-        line-height: 1.2;
-      }
-      li{
-        margin: 0 .5em 2px 0; padding: 0; float: left;
-        a{
-          display: block; color: var(--kwFontColor); text-decoration: underline;
-          padding: 1px 2px 0;
-          &:hover, &:focus { text-decoration: none;}
-          &:focus { background-color: var(--kwBgc); }
-        }
-      }
-    }
-    form { 
-      max-width: none;
-      input{height: 2.4em; line-height: 2.4;}
-      input[type="text"]{ flex: 0 0 10em;}
-      input[type="submit"], input[type="button"]{ flex-basis: 2.4em; width: 2.4em;}
-    }
   }
+
+  /* 熱門查詢詞 */
+  .header .search .keywordHot { display: block;}
+  .header .search .keywordHot ul{ 
+    list-style: none; margin: 0; padding: 0; overflow: hidden;
+    line-height: 1.2;
+  }
+  .header .search .keywordHot li{
+    margin: 0 .5em 2px 0; padding: 0; float: left;
+  }
+  .header .search .keywordHot li a{
+    display: block; padding: 1px 2px 0;
+    text-decoration: underline;
+    color: var(--kwFontColor);
+  }
+  .header .search .keywordHot li a:hover,
+  .header .search .keywordHot li a:focus { text-decoration: none;}
+  .header .search .keywordHot li a:focus { background-color: var(--kwBgc); }
+
+  .header .search form { max-width: none; }
+  .header .search form input{height: 2.4em; line-height: 2.4;}
+  .header .search form input[type="text"]{ flex: 0 0 10em;}
+  .header .search form input[type="submit"],
+  .header .search form input[type="button"]{ flex-basis: 2.4em; width: 2.4em;}
 }

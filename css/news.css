@@ -1,87 +1,79 @@
 /*訊息類*/
 [class^=newsType] time{line-height:1.8em;}
 
-.newsType1, .newsType2 {
-	&>h2{
-		width: 92%;margin-left:auto;margin-right:auto;
-		/* border-bottom:1px solid #888; */
-	}
-	ul{
-		width: 92%;margin:0 auto;padding:0;
-		&:first-child{padding-top:1em;}
-	}
-	li{
-		&>a{
-			position:relative;
-			display:block;overflow:hidden;padding:.7em 5px .55em;text-decoration:none;
-			border-bottom:1px dotted #aaa;
-			transition:.2s;
-			&::before {
-				content:'';position:absolute;left:0;top:5px;bottom:5px;width:0;
-				background:var(--a_before_bgc);
-				transition:.2s;
-			}
-			&:hover, &:focus {
-				padding-left:10px;padding-right:0;
-				border-bottom:1px solid #000;
-				color:var(--fontColorDark);
-				&::before { width: 6px;}
-			}
-		}
-		time{float:right;margin-left:	1em;}
-	}
+.newsType1>h2,
+.newsType2>h2 {
+	width: 92%;margin-left:auto;margin-right:auto;
+}
+.newsType1 ul,
+.newsType2 ul{
+	width: 92%;margin:0 auto;padding:0;
+}
+.newsType1 ul:first-child,
+.newsType2 ul:first-child{padding-top:1em;}
+.newsType1 li>a,
+.newsType2 li>a{
+	position:relative;
+	display:block;overflow:hidden;padding:.7em 5px .55em;text-decoration:none;
+	border-bottom:1px dotted #aaa;
+	transition:.2s;
+}
+.newsType1 li>a::before,
+.newsType2 li>a::before {
+	content:'';position:absolute;left:0;top:5px;bottom:5px;width:0;
+	background:var(--a_before_bgc);
+	transition:.2s;
+}
+.newsType1 li>a:hover,
+.newsType1 li>a:focus,
+.newsType2 li>a:hover,
+.newsType2 li>a:focus {
+	padding-left:10px;padding-right:0;
+	border-bottom:1px solid #000;
+	color:var(--fontColorDark);
+}
+.newsType1 li>a:hover::before,
+.newsType1 li>a:focus::before,
+.newsType2 li>a:hover::before,
+.newsType2 li>a:focus::before { width: 6px;}
 
-	@media screen and (min-width:601px){
-		h2{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.newsType1 li time,
+.newsType2 li time{ float:right;margin-left:	1em;}
+
+@media screen and (min-width:601px){
+	.newsType1 h2, .newsType2 h2 {
+		text-overflow:ellipsis;overflow:hidden;white-space:nowrap;
 	}
 }
 
-.newsType1, .newsType2, .newsType3, .newsType4, .newsType5{
+
+
+
+
+.newsType1,
+.newsType2,
+.newsType3,
+.newsType4,
+.newsType5 {--h2_bgc: #666;}
+.newsType1>h2,
+.newsType2>h2,
+.newsType3>h2,
+.newsType4>h2,
+.newsType5>h2{	border-bottom:3px solid var(--h2_bgc);}
+
+.cx3>.newsType1, .cx3>.newsType2,
+.cx4>.newsType1, .cx4>.newsType2{
 	--h2_bgc: #666;
-	&>h2{border-bottom:3px solid var(--h2_bgc);}
+	
+	padding-top: 0;
 }
-
-.cx3, .cx4 {
-	&>.newsType1 , &>.newsType2{
-		--h2_bgc: #666;
-		
-		padding-top: 0;
-		&>h2{
-			padding: 0 .5em;width: auto;height: 2.4em;line-height: 2.5em;
-			font-size: 1.15em;border: none;
-			color:#fff;
-			background-color: var(--h2_bgc);
-		}
-	}
+.cx3>.newsType1>h2, .cx3>.newsType2>h2,
+.cx4>.newsType1>h2, .cx4>.newsType2>h2{
+	padding: 0 .5em;width: auto;height: 2.4em;line-height: 2.5em;
+	font-size: 1.15em;border: none;
+	color:#fff;
+	background-color: var(--h2_bgc);
 }
-
-/* .cx3>section.newsType1,
-.cx3>section.newsType2,
-.cx4>section.newsType1,
-.cx4>section.newsType2{padding-top: 0;}
-
-.cx3>section.newsType1>h2,
-.cx3>section.newsType2>h2,
-.cx4>section.newsType1>h2,
-.cx4>section.newsType2>h2{padding: 0 .5em;width: auto;height: 2.4em;line-height: 2.5em;font-size: 1.15em;border: none;color:#fff;background-color: #666;} */
-
-
-/* .newsType1 ul,
-.newsType2 ul{width: 92%;margin:0 auto;padding:0;} */
-/* .newsType1 ul:first-child,
-.newsType2 ul:first-child{padding-top:1em;} */
-/* .newsType1 li>a,
-.newsType2 li>a{display:block;overflow:hidden;padding:.7em 5px .55em;text-decoration:none;border-bottom:1px dotted #aaa;}
-.newsType1 li a:hover,
-.newsType1 li a:focus,
-.newsType2 li a:hover,
-.newsType2 li a:focus{border-bottom:1px solid #000;} */
-/* .newsType2 li time{float:right;margin-left:	1em;} */
-/* @media screen and (min-width:601px){
-	.newsType1>h2,
-	.newsType2>h2{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
-} */
-
 
 
 
@@ -108,8 +100,6 @@
 .newsType3 ul,
 .newsType4 h2,
 .newsType4 ul{width:92%;margin:0 auto;}
-/*.newsType3 ul,
-.newsType4 ul{border-top:1px solid #bbb;}*/
 .newsType3 li,
 .newsType4 li{text-align:center;padding:0 2px 1.3em;overflow:hidden;border-bottom:1px solid #bbb;}
 .newsType3 li a,
@@ -137,10 +127,6 @@
 }
 
 @media screen and (min-width:1001px) {
-/*	.newsType3:only-child h2,
-	.newsType3:only-child ul,
-	.newsType4:only-child h2,
-	.newsType4:only-child ul{width:88%;}*/
 	.newsType3 li a{max-height:12em;overflow: hidden;padding-left:0;}
 	.newsType3 li p{ margin:1em 0 0;}
 }
@@ -162,10 +148,6 @@
 @media screen and (min-width:1001px) {
 	.newsType5:only-child h2,
 	.newsType5:only-child p{width:88%;}
-
-	/*.cx2 .bb1 + .newsType5{min-height: 360px;}*/
-	/*.cx2.gutter .bb1 + .newsType5{min-height: 342px;}*/
-	/*.cx2>.newsType6 + .newsType5{padding-top: 30px;}*/
 }
 
 
@@ -181,8 +163,6 @@
 .tabItem:first-child a{border: none;}
 .tabItem a:hover,
 .tabItem a:focus{text-decoration:none;}
-/* .tabItem a:before{content: '';position: absolute;top: 5px;left: 4px;right: 4px;bottom:8px;border: 1px solid rgba(255,255,255,.7);border-radius: 3px;box-shadow:#fff 0 0 2px;display: none;}
-.tabItem a:focus:before{display: block;} */
 .tabContent{position: static;display:none;padding:1.2em 4% .8em;background: #fff;}
 .active .tabContent{display:block;}
 @media screen and (min-width:801px){
@@ -249,14 +229,25 @@
 	.gutter1>section.newsType6:only-child{margin-top:0;}
 	
 	.newsType6 + section h2 {margin-top: -12px;}
-
 }
 
 /* 訊息第七型 */
 .newsType7 li{width:92%;margin:1em auto;}
-.newsType7 li a{display:block;position:relative;overflow:hidden;background:#fff;box-shadow:rgba(0,0,0,.4) 0 0 3px;text-decoration:none;}
+.newsType7 li a {
+	display: block;position: relative;
+	overflow: hidden;text-decoration: none;
+	background: #fff;box-shadow: rgba(0, 0, 0, .4) 0 0 3px;
+}
 .newsType7 li img {display:block;width:100%;height:42vw;object-fit:cover;}
-.newsType7 li h3{position:relative;height:2.2em;line-height:2.2em;margin:0;padding:0 .5em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:1.06em;background:rgba(0,0,0,.6);color:#fff;text-align:center;text-decoration:none;}
+.newsType7 li h3 {
+	position: relative;
+	height: 2.2em;line-height: 2.2em;
+	margin: 0;padding: 0 .5em;
+	overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+	font-size: 1.06em;text-align: center;
+	text-decoration: none;
+	background: rgba(0, 0, 0, .6);color: #fff;
+}
 .newsType7 li img+h3{margin-top: -2.2em;}
 .newsType7 li p{width:90%;margin:.7em auto;max-height:16.1em;;overflow:hidden;text-align:justify;}
 .newsType7 li img~p{max-height:9em;}
