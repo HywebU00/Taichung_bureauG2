@@ -6,12 +6,6 @@
 [class^="iconType"].circle li img{border-radius:50%;width:48px;height:48px;padding:12px;}
 .circle li img{background:#eee}
 
-/* @media screen and (max-width:600px) and (min-width:321px){
-	[class^="iconType"] li img{width:64px;height:64px;}
-	[class^="iconType"].circle li img{width:48px;height:48px;padding:8px;border: none}
-} */
-
-
 
 /*圖示第一型：圖在字左方*/
 .iconType1 ul{text-align:center;margin:0 auto;}

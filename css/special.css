@@ -31,11 +31,6 @@
 	.laborData ul{ margin: 0; padding: 6px 0; border: none; }
 	.row>.laborData .more{ margin: 0; width: 6em;}
 
-	/* .laborData>h2{position:absolute;left:0;top:0;bottom:0;width:21%;}
-	.laborData ul{float:left;padding:1em 2% .4em 0;width:26%;border: none; border: 1px dotted red;}
-	.laborData h2+ul{margin-left:25%;width:32%;}
-	.row>.laborData .more{width:12%;position:absolute;right:0;top:50%;margin-top:-1.1em;} */
-
 	.laborData li em{min-width: 0;}
 	.laborData li{white-space: nowrap;padding:0;border: none;}
 	.laborData li .label{float: none;display: inline-block;text-align:right;}

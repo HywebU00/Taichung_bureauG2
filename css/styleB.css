@@ -165,17 +165,11 @@ button.searchCtrl.close {
 .tabItem.active a:focus::after{background:#33aca3;}
 
 
-@media screen and (min-width:601px){
-	
-}
-
-
 
 .iconType1 li a{position:relative;top:0;border-radius:5px;background:#fff;box-shadow:#cdd 0 0 0 1px;transition:all .2s;}
 .iconType1 li a:hover{box-shadow:rgba(0,0,0,.4) 0 3px 8px;top:-2px;}
 .iconType1 li a:focus{box-shadow:#57ba95 0 0 0 3px;top:0;}
 
-/*.row>.iconType1.circle{background-color:transparent;color:#000;}*/
 .iconType1.circle li a{background:none;box-shadow:none;}
 .iconType1.circle li img{background:#fff;box-shadow:#57ba95 0 0 0 2px inset;}
 .iconType1.circle li a:hover,

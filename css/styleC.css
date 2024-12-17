@@ -12,10 +12,6 @@
 }
 
 
-
-/* a.goCenter{background: #fe5;} */
-
-
 /* 202410 */
 /* -------------------------------------------------------------------------------- */
 .header{
@@ -258,17 +254,10 @@
 .iconType3.circle a:hover img,
 .iconType3.circle a:focus img{box-shadow:#fff 0 0 0 2px;background:#e17c1a;}
 
-/*.iconType1:only-child .more a,*/
-/*.iconType2 .more a,*/
 .iconType3 .more a{color:#fff;}
-/*.iconType1:only-child .more a:hover,*/
-/*.iconType2 .more a:hover,*/
 .iconType3 .more a:hover,
 .iconType1:only-child .more a:focus,
-/*.iconType2 .more a:focus,*/
 .iconType3 .more a:focus{background:rgba(0,0,0,.3);box-shadow:#fff 0 0 4px 1px;}
-/*.iconType1:only-child .more a::after,*/
-/*.iconType2 .more a::after,*/
 .iconType3 .more a::after{border-left-color:#fff;}
 
 .iconType4{background-color:#f7f6ee;}
@@ -415,7 +404,6 @@
 
 
 .footer{background:#fff;border-top:4px solid #e17c1a}
-/* .footer>nav li a:focus{outline-color:#e17c1a } */
 .footer>nav li a{border-radius: 3px;}
 .footer>nav li a:hover,
 .footer>nav li a:focus{background: #bb2965;color: #fff;text-decoration: none;}
@@ -438,18 +426,6 @@
 .footer .alertCAP_forTCC_content a[class^="alertCAP_forTCC_more banner"]:hover{ background-color: #e17c1a;color: #fff;}
 
 @media screen and (max-width:1000px) {
-	/* .header .sidebarCtrl,
-	.header .searchCtrl{background:none;}
-	.header .searchCtrl::before,
-	.header .sidebarCtrl::before{border-color:#554;}
-	.header .searchCtrl::after,
-	.header .sidebarCtrl::after{background:#554;}
-	.header .sidebarCtrl:hover, .header .sidebarCtrl:focus,
-	.header .searchCtrl:hover, .header .searchCtrl:focus{background:#ffe749;}
-	.searchCtrl.close{background:#333;}
-	.searchCtrl.close::before,
-	.searchCtrl.close::after{background:#554;}
-	.header .searchCtrl.close{background:#ffe749;} */
 	.footer{padding-top:0;background:#f9f8ec;}
 	.footer::before{display:none;}
 }
@@ -566,14 +542,6 @@
 .epSubscribe+.sns2 ul{margin-top:-.25em;}
 
 
-
-
-
-
 .preface{background:#f7f6ee;}
 .function li a:hover,
 .function li a:focus{background-color:#009ba4;box-shadow:#009ba4 0 0 0 2px;}
-
-
-
-
