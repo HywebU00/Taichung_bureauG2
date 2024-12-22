@@ -11,10 +11,44 @@
 	--fontColorDark: #000; 
 }
 
+/*  default.css */
+/* ================================================================================ */
+body { color: #393939;}
+
+.goCenter{background: #fe6; color: #000;}
+.goCenter:focus{color: #000; }
+
+/* more */
+.more a {
+	border-radius: 5px;
+	color: #393939;
+}
+.more a::after {
+	content: '';
+	display: inline-block;width: 0;height: 0;
+	border-width: 6px 0 6px 9px;
+	border-style: solid;
+	border-color: transparent transparent transparent #393939;
+	vertical-align: middle;
+	margin: -4px 0 auto 6px;
+}
+.more a:hover {
+	background: rgb(255 255 255 / .5);
+	box-shadow: rgb(0 0 0 / .4) 0 0 5px 1px;
+}
+.more a:focus {
+	background-color: #9c2b99; color: #fff;
+	box-shadow:none;
+}
+.more a:focus::after { border-left-color: #fff;}
+/* ================================================================================ */
+
+
+
 
 /* 202410 */
 /* -------------------------------------------------------------------------------- */
-.header{
+/* .header{
 	--bgc: var(--primaryColor);
 	--bgcFixed: rgb(240 193 59 / .95);
 	--focusOutlineColor: #fffbe0;
@@ -23,27 +57,96 @@
 	--bgc: #3f4534;
 	--fontColor: #fffbe0;
 	--tinge: #ff8e1d;
+} */
+
+
+
+/*  header.css */
+/* ================================================================================ */
+.header{background-color: #f0c133;}
+.header h1 a:focus{outline: 1px solid #fffbe0; }
+.header.fixed{background-color: rgba(240, 193, 59, .95);}
+
+@media screen and (min-width: 1000px){
+	.header .navigation{background-color: #3f4534;}
+	.header .navigation>ul>li>a{color: #fffbe0;}
+	.header .navigation>ul>li>a::after{background-color: #ff8e1d;}
+	.header .navigation>ul>li>a:focus {outline: 1px solid #ff8e1d;}
 }
 
 
-/*  */
-.sidebarCtrl, .searchCtrl{
-	--tinge: #443;
-	--bgc: transparent;
+/* 側欄開關 */
+.sidebarCtrl{background-color: transparent;}
+.sidebarCtrl::before{
+	background:#443;
+	box-shadow: #443 0 -8px 0, #443 0 8px;
 }
-.sidebarCtrl:hover, .sidebarCtrl:focus ,
-.searchCtrl:hover, .searchCtrl:focus {
-	--bgc: #ffeb38;
+.sidebarCtrl:hover,
+.sidebarCtrl:focus{background-color: #ffeb38;}
+.sidebarCtrl:hover::before,
+.sidebarCtrl:focus::before{
+	background:#443;
+	box-shadow: #443 0 -8px 0, #443 0 8px;
 }
+.sidebarCtrl:focus-visible{outline-color: #443;}
 
-.searchCtrl.close {
-	--tinge: #443;
-	--bgc: #ffeb38;
-}
-.searchCtrl.close:hover, .searchCtrl.close:focus {
-	--tinge: #443;
-	--bgc: #ffeb38;
-}
+
+
+/* 查詢開關、圖示 */
+.searchCtrl{background-color: transparent;}
+.searchCtrl::before, .searchCtrl::after{content:'';position:absolute;}
+.searchCtrl::before{border:2px solid #443;}
+.searchCtrl::after{background-color: #443;}
+.searchCtrl:hover,
+.searchCtrl:focus{background-color: #ffeb38;}
+.searchCtrl:hover::before,
+.searchCtrl:focus::before{border-color: #443;}
+.searchCtrl:hover::after,
+.searchCtrl:focus::after{ background-color: #443;}
+.searchCtrl:focus-visible{ outline-color: #443;}
+/* X */
+.searchCtrl.close::before,
+.searchCtrl.close::after{background-color: #443;}
+
+/* ================================================================================ */
+
+
+
+/* menu.css *//* 寬版主選單 */
+/* ================================================================================ */
+.header .menu > ul > li > a:hover,
+.header .menu > ul > li > a:focus {background-color: #3f4534;color: #fff;}
+.header .menu > ul > li:hover > a {background-color: #3f4534;color: #fff;}
+.header .menu > ul ul {background-color: #fff;}
+.header .menu li a {color: #222;}
+.header .menu li a:hover,
+.header .menu li a:focus {background-color: #e17c1a;color: #fff;}
+.header .menu li:hover > a {background-color: #e17c1a;color: #fff;}
+.header .menu li ul {background: #fff; box-shadow: rgb(0 0 0 / .5) 0 5px 12px;}
+.header .menu li li {border-top-color: #ccc;}
+.header .menu li li.hasChild > a::after { border-color: #e17c1a;}
+.header .menu li li.hasChild:hover > a::after,
+.header .menu li li.hasChild > a:hover::after,
+.header .menu li li.hasChild > a:focus::after {border-color: #fff;}
+
+/* megaMenu */
+/* 第二層 */
+.header .megaMenu > ul > li > a {color: #222;}
+.header .megaMenu > ul > li > a:hover,
+.header .megaMenu > ul > li > a:focus {background-color: #3f4534;color: #fff;}
+.header .megaMenu > ul > li:hover > a {background-color: #3f4534;color: #fff;}
+.header .megaMenu > ul > li > ul {box-shadow: rgb(0 0 0 / .5) 0 2px 18px;background-color: #fff;}
+.header .megaMenu > ul > li > ul li a::before {background: #e17c1a;}
+.header .megaMenu > ul > li > ul li a:hover,
+.header .megaMenu > ul > li > ul li a:focus {background-color: #e17c1a;color: #fff;}
+.header .megaMenu > ul > li > ul li a:hover::before,
+.header .megaMenu > ul > li > ul li a:focus::before {background: #fff;}
+.header .megaMenu > ul > li > ul > li {border: 1px solid #ccc;}
+.header .megaMenu > ul > li > ul > li li {border-top: 1px dotted #ccc;}
+/* ================================================================================ */
+
+
+
 
 /* 版頭查詢區 202410*/
 .header .search {
@@ -60,6 +163,35 @@
 		--tinge: #000;
 	}
 }
+/*  search.css *//* 版頭的查詢區 */
+/* ================================================================================ */
+.header .search {background: rgb(0 0 0 / .8);}
+.header .search form input[type="text"]{background-color: #fff;}
+.header .search form input[type="text"]:hover,
+.header .search form input[type="text"]:focus { box-shadow: #44b013 0 0 0 1px inset;}
+.header .search form input[type="text"]:focus {box-shadow: #44b013 0 0 0 2px inset;}
+
+.header .search form input[type="submit"],
+.header .search form input[type="button"] {background-color: #44b013;}
+.header .search form input[type="submit"]:hover,
+.header .search form input[type="submit"]:focus,
+.header .search form input[type="button"]:hover,
+.header .search form input[type="button"]:focus { background-color: #93c622; outline: none;}
+
+a.btnAdv { color: #fff; }
+a.btnAdv:focus-visible{outline: 2px solid #fff;text-decoration: none;}
+
+@media screen and (min-width: 1000px){
+	.header .search {background-color: transparent;}
+	.header .search .keywordHot li a{color: #3f4534;}
+	.header .search .keywordHot li a:focus { background-color: #ffe749; }
+	a.btnAdv { color: #000; }
+	a.btnAdv:focus-visible{outline-color: #000; }
+}
+
+/* ================================================================================ */
+
+
 
 
 /* 側欄 */
@@ -86,84 +218,66 @@
 }
 
 
-/* 寬版主選單 */
-/* -------------------------------------------------------------------------------- */
-.header .menu, .header .megaMenu {
-	--menu_bgc: #fff;
-  --menu_top_a_hover_bgc:#3f4534;
-  --menu_a_color:#000;
-  --menu_a_hover_bgc:#e17c1a;
-  --menu_a_hover_color:#fff;
-	--menu_a_after_tinge:#e17c1a;
-  --menu_bdr_color:#ccc;
-  --menu_shadow_color : rgb(0 0 0 / .5);
-}
-
-
-/* more */
-/* -------------------------------------------------------------------------------- */
-.more a {
-	border-radius: 5px;
-	color: var(--fontColor);
-}
-.more a::after {
-	content: '';
-	display: inline-block;width: 0;height: 0;
-	border-width: 6px 0 6px 9px;
-	border-style: solid;
-	border-color: transparent transparent transparent var(--fontColor);
-	vertical-align: middle;
-	margin: -4px 0 auto 6px;
-}
-.more a:hover {
-	background: rgb(255 255 255 / .5);
-	box-shadow: rgb(0 0 0 / .4) 0 0 5px 1px;
-}
-.more a:focus {
-	--fontColor: #fff;
-
-	background-color: var(--assistance4);
-	box-shadow:none;
-}
-/* -------------------------------------------------------------------------------- */
 
 
 
-/* newsType1, .newsType2 AND  .newsType3, .newsType4, .newsType5 */
-/* -------------------------------------------------------------------------------- */
-.newsType1, .newsType2, .newsType3, .newsType4, .newsType5{
-	--h2_bgc: #c70e69;
-	--a_before_bgc: #d10085;
-}
 
-.cx3>.newsType1 , .cx3>.newsType2{	background-color:#fff;}
-.cx3>.newsType1:nth-child(3n+1),
-.cx3>.newsType2:nth-child(3n+1) {--h2_bgc: #dc4e32;--a_before_bgc: #dc4e32;}
-.cx3>.newsType1:nth-child(3n+2),
-.cx3>.newsType2:nth-child(3n+2) {--h2_bgc: #c70e69;--a_before_bgc: #c70e69;}
-.cx3>.newsType1:nth-child(3n+3),
-.cx3>.newsType2:nth-child(3n+3) {--h2_bgc: #ac3ca8;--a_before_bgc: #ac3ca8;}
+/* news.css */
+/* ================================================================================ */
+/* newsType1, .newsType2  /AND/  .newsType3, .newsType4, .newsType5 */
+.newsType1>h2,
+.newsType2>h2,
+.newsType3>h2,
+.newsType4>h2,
+.newsType5>h2{ border-bottom-color: #c70e69; }
 
-.cx4>.newsType1:nth-child(4n+1),
-.cx4>.newsType2:nth-child(4n+1) {--h2_bgc: #dc4e32; --a_before_bgc: #dc4e32;}
-.cx4>.newsType1:nth-child(4n+2),
-.cx4>.newsType2:nth-child(4n+2) {--h2_bgc: #c70e69; --a_before_bgc: #c70e69;}
-.cx4>.newsType1:nth-child(4n+3),
-.cx4>.newsType2:nth-child(4n+3) {--h2_bgc: #ac3ca8; --a_before_bgc: #ac3ca8;}
-.cx4>.newsType1:nth-child(4n+4),
-.cx4>.newsType2:nth-child(4n+4) {--h2_bgc: #6930a8; --a_before_bgc: #6930a8;}
-/* -------------------------------------------------------------------------------- */
+.newsType1 li>a::before,
+.newsType2 li>a::before,
+.newsType3 li>a::before,
+.newsType4 li>a::before,
+.newsType5 li>a::before{background-color: #d10085;}
+
+.cx3>.newsType1 , .cx3>.newsType2{ background-color:#fff;}
+
+.cx3>.newsType1:nth-child(3n+1)>h2,
+.cx3>.newsType2:nth-child(3n+1)>h2 {background-color: #dc4e32;}
+.cx3>.newsType1:nth-child(3n+2)>h2,
+.cx3>.newsType2:nth-child(3n+2)>h2 {background-color: #c70e69;}
+.cx3>.newsType1:nth-child(3n+3)>h2,
+.cx3>.newsType2:nth-child(3n+3)>h2 {background-color: #ac3ca8;}
+
+.cx4>.newsType1:nth-child(4n+1)>h2,
+.cx4>.newsType2:nth-child(4n+1)>h2 {background-color: #dc4e32;}
+.cx4>.newsType1:nth-child(4n+2)>h2,
+.cx4>.newsType2:nth-child(4n+2)>h2 {background-color: #c70e69;}
+.cx4>.newsType1:nth-child(4n+3)>h2,
+.cx4>.newsType2:nth-child(4n+3)>h2 {background-color: #ac3ca8;}
+.cx4>.newsType1:nth-child(4n+4)>h2,
+.cx4>.newsType2:nth-child(4n+4)>h2 {background-color: #6930a8;}
+
+.cx3>.newsType1:nth-child(3n+1) li>a::before,
+.cx3>.newsType2:nth-child(3n+1) li>a::before { background-color:#dc4e32; }
+.cx3>.newsType1:nth-child(3n+2) li>a::before,
+.cx3>.newsType2:nth-child(3n+2) li>a::before {background-color: #c70e69;}
+.cx3>.newsType1:nth-child(3n+3) li>a::before,
+.cx3>.newsType2:nth-child(3n+3) li>a::before {background-color: #ac3ca8;}
+
+.cx4>.newsType1:nth-child(4n+1) li>a::before,
+.cx4>.newsType2:nth-child(4n+1) li>a::before { background-color: #dc4e32;}
+.cx4>.newsType1:nth-child(4n+2) li>a::before,
+.cx4>.newsType2:nth-child(4n+2) li>a::before { background-color: #c70e69;}
+.cx4>.newsType1:nth-child(4n+3) li>a::before,
+.cx4>.newsType2:nth-child(4n+3) li>a::before { background-color: #ac3ca8;}
+.cx4>.newsType1:nth-child(4n+4) li>a::before,
+.cx4>.newsType2:nth-child(4n+4) li>a::before { background-color: #6930a8;}
+/* ================================================================================ */
 
 
 
 
 
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-
-
+/* 2024未修改 */
+/* ================================================================================ */
 .row:nth-child(odd){background-color:#f0f2f3;}
 .row:nth-child(even){background-color:#fff;}
 .gutter>section,

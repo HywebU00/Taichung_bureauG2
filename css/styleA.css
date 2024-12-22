@@ -1,4 +1,5 @@
 /* StyleA */
+/* 
 :root{
 	--primaryColor: #ffac0e;
 	--secondaryColor:#3f4534;
@@ -9,104 +10,26 @@
 
 	--fontColor: #393939;
 	--fontColorDark: #000; 
-}
+} 
+*/
 
 a{text-decoration:none;color:#554}
 a:hover, a:focus{outline:none;color:#000;}
 
 
+/* 202412 ///////////////////////////////////////////////////////////////////////// */
 
-/* 202410 */
-/* -------------------------------------------------------------------------------- */
-.header{
-	--bgc: var(--primaryColor);
-	--bgcFixed: rgba(255,172,14,.95);
-	--focusOutlineColor: #fe9;
+/*  default.css */
+/* ================================================================================ */
+body { color: #393939;}
 
-}
-.header .navigation{
-	--bgc: #444;
-	--fontColor: #fefad8;
-	--tinge: #fdd600;
-}
-
-/*  */
-button.sidebarCtrl, button.searchCtrl{
-	--tinge: #333;
-	--bgc: transparent;
-}
-button.sidebarCtrl:hover, button.sidebarCtrl:focus,
-button.searchCtrl:hover, button.searchCtrl:focus {
-	--tinge: #fff;
-	--bgc: var(--assistance4);
-}
-button.searchCtrl.close {
-	--tinge: #fff;
-	--bgc: var(--assistance4);
-}
-
-
-/* 版頭查詢區 */
-/* -------------------------------------------------------------------------------- */
-.header .search {
-  --bgc: rgb(0 0 0 / .7);
-  --btnBg:#0a7d6c;
-  --btnBg2:#fb6400;
-  --tinge: #fff;
-  --kwFontColor: #000;
-  --kwBgc: #fe9;
-
-}
-@media screen and (min-width: 1000px){
-	.header .search {
-		--bgc: transparent;
-		--tinge: #000;
-	}
-}
-
-/* 側欄 */
-/* -------------------------------------------------------------------------------- */
-.sidebar{
-  --bgc: #3f4534;
-  --closeBtn_bgc: #a2cb0d;
-  --closeBtn_hover_bgc: #b5e119;
-
-  --menu_bgc: #199986;
-  --menu_hover_bgc: #0a7d6c;
-  --menuA_color: #fff;
-  --menu_bdrColor : rgb(255 255 255 / .6);
-  --menu_bdrColor2 : rgb(255 255 255 / .4);
-
-  --navA_color: #000;
-  --navA_bgc: #ecb322;
-  --navA_hover_bgc: #fdd600;
-  --nav_bdrColor: #3f4534;
-
-  --sidebarClose_bgc: #a2cb0d;
-  --sidebarClose_hover_bgc: #cae80a;
-  --sidebarClose_color: #000;
-}
-
-
-/* 寬版主選單 */
-/* -------------------------------------------------------------------------------- */
-.header .menu, .header .megaMenu {
-	--menu_bgc: #fff;
-  --menu_top_a_hover_bgc:#3f4534;
-  --menu_a_color:#222;
-  --menu_a_hover_bgc:#fc6400;
-  --menu_a_hover_color:#fff;
-	--menu_a_after_tinge:#fc6400;
-  --menu_bdr_color:#ccc;
-  --menu_shadow_color : rgb(0 0 0 / .5);
-}
-
+.goCenter{background: #fd0; color: #000;}
+.goCenter:focus{color: #000; }
 
 /* more */
-/* -------------------------------------------------------------------------------- */
 .more a {
 	border-radius: 2em;
-	color: var(--fontColorDark);
+	color: #000;
 	background: rgba(255, 255, 255, .7);
 	box-shadow: rgba(0, 80, 80, .7) 0 0 3px;
 }
@@ -114,50 +37,217 @@ button.searchCtrl.close {
 	content: '＋';
 	display: inline-block; vertical-align: middle; margin-right: 1px;
 	font-weight: bold;font-size: 1.2em;
-	color: var(--assistance2);
+	color: #0f9488;
 }
 .more a:hover {
 	background: #fff;
 	box-shadow: rgba(0, 80, 80, .8) 0 2px 6px;
 }
 .more a:focus {
-	background: var(--assistance4); color: #fff;
+	background: #fb6400; color: #fff;
 	box-shadow: none;
 }
 .more a:focus::before { color: #fff;}
+/* ================================================================================ */
 
 
 
-/* newsType1, .newsType2 AND  .newsType3, .newsType4, .newsType5 */
-/* -------------------------------------------------------------------------------- */
-.newsType1, .newsType2, .newsType3, .newsType4, .newsType5{
-	--h2_bgc: #fc6400;
-	--a_before_bgc: #fb0;
+/*  header.css */
+/* ================================================================================ */
+.header{background-color: #ffac0e;}
+.header h1 a:focus{outline: 1px solid #fe9; }
+.header.fixed{background-color: rgba(255,172,14,.95);}
+
+@media screen and (min-width: 1000px){
+	.header .navigation{background-color: #444;}
+	.header .navigation>ul>li>a{color: #fefad8;}
+	.header .navigation>ul>li>a::after{background-color: #fdd600;}
+	.header .navigation>ul>li>a:focus {outline: 1px solid #fdd600;}
 }
 
-.cx3>.newsType1:nth-child(3n+1), .cx3>.newsType2:nth-child(3n+1) {--h2_bgc: #0f9488;--a_before_bgc: #0f9488;}
-.cx3>.newsType1:nth-child(3n+2), .cx3>.newsType2:nth-child(3n+2) {--h2_bgc: #64aa00;--a_before_bgc: #64aa00;}
-.cx3>.newsType1:nth-child(3n+3), .cx3>.newsType2:nth-child(3n+3) {--h2_bgc: #fc6400;--a_before_bgc: #fc6400;}
+/* 側欄開關 */
+.sidebarCtrl{background-color: transparent;}
+.sidebarCtrl::before{
+	background:#333;
+	box-shadow: #333 0 -8px 0, #333 0 8px;
+}
+.sidebarCtrl:hover,
+.sidebarCtrl:focus{background-color: #fb6400;}
+.sidebarCtrl:hover::before,
+.sidebarCtrl:focus::before{
+	background:#fff;
+	box-shadow: #fff 0 -8px 0, #fff 0 8px;
+}
+.sidebarCtrl:focus-visible{ outline-color: #333;}
 
-.cx4>.newsType1:nth-child(4n+1), .cx4>.newsType2:nth-child(4n+1) {--h2_bgc: #0f9488; --a_before_bgc: #0f9488;}
-.cx4>.newsType1:nth-child(4n+2), .cx4>.newsType2:nth-child(4n+2) {--h2_bgc: #64aa00; --a_before_bgc: #64aa00;}
-.cx4>.newsType1:nth-child(4n+3), .cx4>.newsType2:nth-child(4n+3) {--h2_bgc: #fc6400; --a_before_bgc: #fc6400;}
-.cx4>.newsType1:nth-child(4n+4), .cx4>.newsType2:nth-child(4n+4) {--h2_bgc: #f99900; --a_before_bgc: #f99900;}
-/* -------------------------------------------------------------------------------- */
+/* 查詢開關、圖示 */
+.searchCtrl{background-color: transparent;}
+.searchCtrl::before, .searchCtrl::after{content:'';position:absolute;}
+.searchCtrl::before{border:2px solid #333;}
+.searchCtrl::after{background-color: #333;}
+.searchCtrl:hover,
+.searchCtrl:focus{background-color: #fb6400;}
+.searchCtrl:hover::before,
+.searchCtrl:focus::before{border-color: #fff;}
+.searchCtrl:hover::after,
+.searchCtrl:focus::after{ background-color: #fff;}
+.searchCtrl:focus-visible{ outline-color: #333;}
+/* X */
+.searchCtrl.close::before,
+.searchCtrl.close::after{background-color: #fff;}
+
+/* ================================================================================ */
 
 
+
+/*  menu.css *//* 寬版主選單 */
+/* ================================================================================ */
+.header .menu > ul > li > a{ color: #000;}
+.header .menu > ul > li > a:hover,
+.header .menu > ul > li > a:focus {background-color: #3f4534;color: #fff;}
+.header .menu > ul > li:hover > a {background-color: #3f4534;color: #fff;}
+.header .menu > ul ul {background-color: #fff;}
+.header .menu li li a {color: #000;}
+.header .menu li a:hover,
+.header .menu li a:focus { background-color: #fdd600;color: #000;}
+.header .menu li:hover > a {background-color: #fdd600;color: #000;}
+.header .menu li ul {background: #fff;box-shadow: rgb(0 0 0 / .5) 0 5px 12px;}
+.header .menu li li {border-top-color: #ccc;}
+.header .menu li li.hasChild > a::after {border-color: #fb6400;}
+.header .menu li li.hasChild:hover > a::after,
+.header .menu li li.hasChild > a:hover::after,
+.header .menu li li.hasChild > a:focus::after {border-color: #000;}
+
+/* megaMenu */
+/* 第二層 */
+.header .megaMenu > ul > li > a {color: #000;}
+.header .megaMenu > ul > li > a:hover,
+.header .megaMenu > ul > li > a:focus {background-color: #3f4534;color: #fff;}
+.header .megaMenu > ul > li:hover > a {background-color: #3f4534;color: #fff;}
+.header .megaMenu > ul > li > ul {box-shadow: rgb(0 0 0 / .5) 0 2px 18px;background-color: #fff;}
+.header .megaMenu > ul > li > ul li a::before {background: #fb6400;}
+.header .megaMenu > ul > li > ul li a:hover,
+.header .megaMenu > ul > li > ul li a:focus {background-color: #fdd600;color: #000;}
+.header .megaMenu > ul > li > ul li a:hover::before,
+.header .megaMenu > ul > li > ul li a:focus::before {box-shadow: #fff 0 0 0 1px;background-color: #fb6400;}
+.header .megaMenu > ul > li > ul > li {border: 1px solid #ccc;}
+.header .megaMenu > ul > li > ul > li li {border-top: 1px dotted #ccc;}
+/* ================================================================================ */
+
+
+
+/*  search.css *//* 版頭的查詢區 */
+/* ================================================================================ */
+.header .search {background: rgb(0 0 0 / .8);}
+.header .search form input[type="text"]{background-color: #fff;}
+.header .search form input[type="text"]:hover,
+.header .search form input[type="text"]:focus { box-shadow: #fb6400 0 0 0 1px inset;}
+.header .search form input[type="text"]:focus {box-shadow: #fb6400 0 0 0 2px inset;}
+
+.header .search form input[type="submit"],
+.header .search form input[type="button"] {background-color: #0a7d6c;}
+.header .search form input[type="submit"]:hover,
+.header .search form input[type="submit"]:focus,
+.header .search form input[type="button"]:hover,
+.header .search form input[type="button"]:focus { background-color: #fb6400; outline: none;}
+
+a.btnAdv { color: #fff; }
+a.btnAdv:focus-visible{outline: 2px solid #fff;text-decoration: none;}
+
+@media screen and (min-width: 1000px){
+	.header .search {background-color: transparent;}
+	.header .search .keywordHot li a{color: #000;}
+	.header .search .keywordHot li a:focus { background-color: #fe9; }
+	a.btnAdv { color: #000; }
+	a.btnAdv:focus-visible{outline-color: #000; }
+}
+
+/* ================================================================================ */
+
+
+
+/*  sidebbar.css *//* 行動版隱藏式側欄 */
+/* ================================================================================ */
+.sidebar {background-color: #3f4534;}
+.sidebar .menu {background-color: #199986;}
+.sidebar .menu li a {color: #fff;}
+.sidebar .menu li > a:hover,
+.sidebar .menu li > a:focus {background-color: #0a7d6c;}
+.sidebar .menu li.hasChild > a::before {border-color:#fff;}
+.sidebar .menu li.hasChild.closeThis > a {border-bottom-color: rgb(255 255 255 / .4);}
+.sidebar .menu li.hasChild li {border-bottom: 1px solid rgb(255 255 255 / .4);}
+.sidebar .menu ul ul {border-color: rgb(255 255 255 / .6);}
+.sidebar .menu > ul > li > a,
+.sidebar .menu > ul > li.hasChild > a {border-bottom: 1px solid rgb(255 255 255 / .6);}
+.sidebar .navigation li > a {
+  color: #000;background: #ecb322;
+  box-shadow: #3f4534 0 0 0 1px;
+}
+.sidebar .navigation li > a:hover,
+.sidebar .navigation li > a:focus {background-color: #fdd600;}
+.sidebar .sidebarClose {background-color: #a2cb0d;color: #000;}
+.sidebar .sidebarClose:hover,
+.sidebar .sidebarClose:focus {background-color: #cae80a;}
+/* ================================================================================ */
+
+
+
+/*  news.css */
+/* ================================================================================ */
+/* newsType1, .newsType2  /AND/  .newsType3, .newsType4, .newsType5 */
+.newsType1>h2,
+.newsType2>h2,
+.newsType3>h2,
+.newsType4>h2,
+.newsType5>h2{ border-bottom-color: #fc6400; }
+
+.newsType1 li>a::before,
+.newsType2 li>a::before,
+.newsType3 li>a::before,
+.newsType4 li>a::before,
+.newsType5 li>a::before{ background-color: #fb0; }
+
+.cx3>.newsType1:nth-child(3n+1)>h2,
+.cx3>.newsType2:nth-child(3n+1)>h2 {background-color: #0f9488;}
+.cx3>.newsType1:nth-child(3n+2)>h2,
+.cx3>.newsType2:nth-child(3n+2)>h2 {background-color: #64aa00;}
+.cx3>.newsType1:nth-child(3n+3)>h2,
+.cx3>.newsType2:nth-child(3n+3)>h2 {background-color: #fc6400;}
+
+.cx4>.newsType1:nth-child(4n+1)>h2,
+.cx4>.newsType2:nth-child(4n+1)>h2 {background-color: #0f9488;}
+.cx4>.newsType1:nth-child(4n+2)>h2,
+.cx4>.newsType2:nth-child(4n+2)>h2 {background-color: #64aa00;}
+.cx4>.newsType1:nth-child(4n+3)>h2,
+.cx4>.newsType2:nth-child(4n+3)>h2 {background-color: #fc6400;}
+.cx4>.newsType1:nth-child(4n+4)>h2,
+.cx4>.newsType2:nth-child(4n+4)>h2 {background-color: #f99900;}
+
+.cx3>.newsType1:nth-child(3n+1) li>a::before,
+.cx3>.newsType2:nth-child(3n+1) li>a::before { background-color:#0f9488; }
+.cx3>.newsType1:nth-child(3n+2) li>a::before,
+.cx3>.newsType2:nth-child(3n+2) li>a::before {background-color: #64aa00;}
+.cx3>.newsType1:nth-child(3n+3) li>a::before,
+.cx3>.newsType2:nth-child(3n+3) li>a::before {background-color: #fc6400;}
+
+.cx4>.newsType1:nth-child(4n+1) li>a::before,
+.cx4>.newsType2:nth-child(4n+1) li>a::before { background-color: #0f9488;}
+.cx4>.newsType1:nth-child(4n+2) li>a::before,
+.cx4>.newsType2:nth-child(4n+2) li>a::before { background-color: #64aa00;}
+.cx4>.newsType1:nth-child(4n+3) li>a::before,
+.cx4>.newsType2:nth-child(4n+3) li>a::before { background-color: #fc6400;}
+.cx4>.newsType1:nth-child(4n+4) li>a::before,
+.cx4>.newsType2:nth-child(4n+4) li>a::before { background-color: #f99900;}
+/* ================================================================================ */
+
+
+/* 左右箭頭按鈕 *//* 多檔案共用 */
 .arbtn:not('.bb1'):hover{background:#ffac0e;}
 
 
 
-
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-
-
+/* 2024未修改 */
+/* ================================================================================ */
 .gutter .bb1{padding:0;background:#fff;}
 
 .dots li{background:#777;}
@@ -209,7 +299,7 @@ button.searchCtrl.close {
 .circle li a:focus img{background:#ffac0e;box-shadow:#ffac0e 0 0 0 2px;}
 
 
-/* -------------------------------------------------------------------------------- */
+/* ================================================================================ */
 .iconType1 li{background:transparent;}
 .iconType1:only-child li a{background:#fafaf8;}
 
@@ -356,7 +446,7 @@ button.searchCtrl.close {
 .goTop:focus:before{border-color:#fe5;margin-top: 10px;}
 
 
-/* *** */
+/* === */
 .path .before:after{border-color:#fb6400;}
 
 .function li a:hover,
