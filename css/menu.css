@@ -57,7 +57,7 @@
   width: 170px;padding: 0;margin-top: -2px;
   font-size: 1em;text-align: left;
   background: var(--menu_bgc);
-  border: 1px solid var(--menu_bdr_color);
+  /* border: 1px solid var(--menu_bdr_color); */
   box-shadow: var(--menu_shadow_color) 0 5px 12px;
 }
 .header .menu li ul ul {
@@ -83,7 +83,9 @@
   width: 10px;
   height: 10px;
   transform: rotate(45deg);
-  border: 3px solid var(--menu_a_after_tinge);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--menu_a_after_tinge);
   border-bottom: none;
   border-left: none;
 }

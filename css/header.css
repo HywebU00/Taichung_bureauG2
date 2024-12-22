@@ -4,7 +4,6 @@
 .sidebarCtrl{
 	--tinge: #333;
 	--bgc: #ddd;
-	--gap:8px;
 
 	position:absolute;left:0;top:0;bottom:0;
 	background-color: var(--bgc);
@@ -13,12 +12,17 @@
 	content:'';position:absolute;width:24px;height:2px;
 	top: calc(50% - 1px);left: calc(50% - 12px);
 	background:var(--tinge);
-	box-shadow: var(--tinge) 0 calc( -1*var(--gap)) 0, var(--tinge) 0 var(--gap);
+	box-shadow: var(--tinge) 0 -8px 0, var(--tinge) 0 8px;
 }
 
-.sidebarCtrl:hover, .sidebarCtrl:focus{
+.sidebarCtrl:hover,
+.sidebarCtrl:focus{
 	box-shadow: none;
 	background-color: var(--bgc);
+}
+.sidebarCtrl:focus-visible{
+	outline: 2px solid var(--bgc);
+	outline-offset: -2px;
 }
 
 /* 查詢開關、圖示 */
@@ -46,7 +50,10 @@
 	box-shadow: none;
 	background-color: var(--bgc);
 }
-
+.searchCtrl:focus-visible{
+	outline: 2px solid var(--bgc);
+	outline-offset: -2px;
+}
 /* X */
 .searchCtrl.close{
 	--bgc: #333;
@@ -62,10 +69,6 @@
 	transform:rotate(45deg);
 }
 .searchCtrl.close::after{transform:rotate(-45deg);}
-
-.searchCtrl.close:hover, .searchCtrl.close:focus{
-	box-shadow: var(--bgc) 0 0 0 2px inset, var(--tinge) 0 0 0 3px inset;
-}
 
 @media screen and (min-width:600px){
 	.sidebarCtrl, .searchCtrl {width:64px;height: 64px;}
@@ -92,11 +95,11 @@
 	position: relative; z-index: 5000;
 	padding:0 44px;height:44px;
 	border-bottom:1px solid #fff;
-	background-color: var(--bgc);
+	/* background-color: var(--bgc); */
 }
 .header h1 {height: 100%; margin: 0 auto; padding:4px 0;}
 .header h1 a{display: block; height: calc(100% - 8px);}
-.header h1 a:focus{outline: 1px solid var(--focusOutlineColor); outline-offset: -1px;}
+.header h1 a:focus{/* outline: 1px solid var(--focusOutlineColor); */ outline-offset: -1px;}
 .header h1 img{ 
 	display: block; margin:0 auto;object-fit: contain;
 	height:100%; width: auto; max-width: calc(100vw - 90px);
@@ -163,15 +166,10 @@
 
 /* 右上連結項 */
 /* -------------------------------------------------------------------------------- */
-.header .navigation{
-	--bgc: #555;
-	--fontColor: #ddd;
-	--tinge: #ff0;
-}
 @media screen and (min-width: 1000px){
 	.header .navigation{
 		position: absolute; top:0; width: 100%;
-		background-color: var(--bgc);
+		background-color: #444;
 	}
 	.header .navigation>ul{
 		display: flex; justify-content: flex-end; 
@@ -181,14 +179,14 @@
 	.header .navigation>ul>li>a{
 		display:block; position: relative; height:2.1em; line-height:2.1;
 		padding:0 2px;text-decoration:none; 
-		color: var(--fontColor);
+		color: #fefad8;
 	}
 	.header .navigation>ul>li>a::after{
 		content:'';position:absolute;height:0;left:0;right:0;bottom:0;
-		background-color: var(--tinge);
+		background-color: #fdd600;
 		transition:.15s;
 	}
 	.header .navigation>ul>li>a:hover::after,
 	.header .navigation>ul>li>a:focus::after {height:3px;}
-	.header .navigation>ul>li>a:focus {outline-offset: -1px; outline: 1px solid var(--tinge);}
+	.header .navigation>ul>li>a:focus {outline-offset: -1px; outline: 1px solid #fdd600;}
 }

@@ -1,5 +1,5 @@
 /*styleC*/
-:root{
+/* :root{
 	--primaryColor: #f0c133;
 	--secondaryColor:#3f4534;
 	--assistance1: #fe6;
@@ -9,7 +9,7 @@
 
 	--fontColor: #393939;
 	--fontColorDark: #000; 
-}
+} */
 
 /*  default.css */
 /* ================================================================================ */
@@ -42,22 +42,6 @@ body { color: #393939;}
 }
 .more a:focus::after { border-left-color: #fff;}
 /* ================================================================================ */
-
-
-
-
-/* 202410 */
-/* -------------------------------------------------------------------------------- */
-/* .header{
-	--bgc: var(--primaryColor);
-	--bgcFixed: rgb(240 193 59 / .95);
-	--focusOutlineColor: #fffbe0;
-}
-.header .navigation{
-	--bgc: #3f4534;
-	--fontColor: #fffbe0;
-	--tinge: #ff8e1d;
-} */
 
 
 
@@ -147,22 +131,6 @@ body { color: #393939;}
 
 
 
-
-/* 版頭查詢區 202410*/
-.header .search {
-  --bgc: rgb(0 0 0 / .7);
-  --btnBg:#44b013;
-  --btnBg2:#93c622;
-  --tinge: #ffe749;
-  --kwFontColor: #3f4534;
-  --kwBgc: #ffe749;
-}
-@media screen and (min-width: 1000px){
-	.header .search {
-		--bgc: transparent;
-		--tinge: #000;
-	}
-}
 /*  search.css *//* 版頭的查詢區 */
 /* ================================================================================ */
 .header .search {background: rgb(0 0 0 / .8);}
@@ -193,32 +161,29 @@ a.btnAdv:focus-visible{outline: 2px solid #fff;text-decoration: none;}
 
 
 
-
-/* 側欄 */
-/* -------------------------------------------------------------------------------- */
-.sidebar{
-  --bgc: #3f4534;
-  --closeBtn_bgc: #a2cb0d;
-  --closeBtn_hover_bgc: #b5e119;
-
-  --menu_bgc: #d97613;
-  --menu_hover_bgc: #d15101;
-  --menuA_color: #fff;
-  --menu_bdrColor : #f9bb6c;
-  --menu_bdrColor2 : #df9438;
-
-  --navA_color: #000;
-  --navA_bgc: #f0c13b;
-  --navA_hover_bgc: #ffeb38;
-  --nav_bdrColor: #3f4534;
-
-  --sidebarClose_bgc: #a20554;
-  --sidebarClose_hover_bgc: #c70e69;
-  --sidebarClose_color: #fff;
+/* sidebbar.css *//* 行動版隱藏式側欄 */
+/* ================================================================================ */
+.sidebar {background-color: #3f4534;}
+.sidebar .menu {background-color: #d97613;}
+.sidebar .menu li a {color: #fff;}
+.sidebar .menu li > a:hover,
+.sidebar .menu li > a:focus {background-color: #d15101;}
+.sidebar .menu li.hasChild > a::before {border-color:#fff;}
+.sidebar .menu li.hasChild.closeThis > a {border-bottom-color: #f9bb6c;}
+.sidebar .menu li.hasChild li {border-bottom: 1px solid #f9bb6c;}
+.sidebar .menu ul ul {border-color: #df9438;}
+.sidebar .menu > ul > li > a,
+.sidebar .menu > ul > li.hasChild > a {border-bottom: 1px solid #df9438;}
+.sidebar .navigation li > a { 
+	background-color: #f0c13b;color: #000;
+  box-shadow: #3f4534 0 0 0 1px;
 }
-
-
-
+.sidebar .navigation li > a:hover,
+.sidebar .navigation li > a:focus {background-color: #ffeb38;}
+.sidebar .sidebarClose {background-color: #a20554;color: #fff;}
+.sidebar .sidebarClose:hover,
+.sidebar .sidebarClose:focus {background-color: #c70e69;}
+/* ================================================================================ */
 
 
 
@@ -271,7 +236,6 @@ a.btnAdv:focus-visible{outline: 2px solid #fff;text-decoration: none;}
 .cx4>.newsType1:nth-child(4n+4) li>a::before,
 .cx4>.newsType2:nth-child(4n+4) li>a::before { background-color: #6930a8;}
 /* ================================================================================ */
-
 
 
 

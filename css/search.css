@@ -46,7 +46,7 @@ a.btnAdv {
 }
 a.btnAdv:hover,
 a.btnAdv:focus{text-decoration: underline;}
-a.btnAdv:focus{outline: 1px solid var(--tinge);}
+a.btnAdv:focus-visible{outline: 2px solid var(--tinge);}
 
 @media screen and (min-width: 1000px){
   .header .search {

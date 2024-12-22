@@ -24,19 +24,22 @@ audio, canvas, video{display:inline-block;}
 }
 
 /* goCenter */
-.goCenter{
-	display: none;z-index: 9999;
-	position: fixed; top: -2.2em;
-	padding: 0 .5em;height: 1.8em;line-height: 1.8em;
-	border-radius: 0 0 4px 4px;
-	text-decoration: none;outline:none; opacity: 0;
-	transition:top .5s, opacity .2s;
+.goCenter{ 
+	display: none; 
 	background: var(--assistance1);
 	color: var(--fontColorDark);
 }
+.goCenter:focus{color: var(--fontColorDark);}
 @media screen and (min-width: 1000px){
-	.goCenter{display: block; left:calc(50vw - 480px);top: -2.2em;}
-	.goCenter:focus{ top:0; text-decoration: none;opacity: 1;color: var(--fontColorDark);}
+	.goCenter{
+		display: block; z-index: 9999;
+		position: fixed; left:calc(50vw - 480px); top: -2.2em;
+		padding: 0 .5em;height: 1.8em;line-height: 1.8em;
+		border-radius: 0 0 4px 4px;
+		text-decoration: none;outline:none; 
+		transition:top .5s;
+	}
+	.goCenter:focus{top:0; text-decoration: none;}
 }
 
 
