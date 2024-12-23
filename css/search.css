@@ -31,8 +31,11 @@
   flex: 0 0 2.8em; width: 2.8em;
   margin: 0 8px 0 0;
   text-indent: -20em; overflow: hidden;
-  background: var(--btnBg) url(../images/search_submit.png) no-repeat center center;
+  background-image: url(../images/search_submit.png);
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: 60%;
+  background-color: var(--btnBg);
 }
 .header .search form input[type="submit"]:hover,
 .header .search form input[type="submit"]:focus,
