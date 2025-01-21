@@ -47,8 +47,8 @@ audio, canvas, video{display:inline-block;}
 .friendly,
 .main .search,
 .ui-widget-content,
-.markA,
-.egov,
+/* .markA, */
+/* .egov, */
 .center .share,
 .accesskey,
 /* .goCenter, */
@@ -363,3 +363,9 @@ input[type="file"]{-webkit-appearance:none;width:12em;}
 
 /* 日期區間 */
 .datePeriod input[type="text"]{width: 7em;}
+
+
+
+/* 行動版顯示無障礙標章 20250120 */
+.markA a {display: block;}
+.markA img {display: block}
